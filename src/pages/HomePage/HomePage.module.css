@@ -1,5 +1,28 @@
 .container {
-    background-color: seagreen;
+    background-color: rgb(240, 99, 18);
     height: 100vh;
     margin: 0;
+    background-image: url("../../images/main_poster.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    position: absolute;
+    bottom: 100px;
+    background-color: rgba(52, 112, 255, 1);
+    width: 274px;
+    height: 44px;
+    padding: 12px, 99px, 12px, 99px; 
+    border-radius: 12px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: #fff;
 }
