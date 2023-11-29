@@ -1,9 +1,17 @@
-import HomePage from "../pages/HomePage/HomePage";
+import { Route, Routes } from "react-router-dom";
+import { appRoutes } from "../constants/routes";
 
 const App = () => {
   return (
     <div>
-      <HomePage/>
+      <header>/</header>
+      <main>
+        <Routes>
+          {appRoutes.map(({ path, element }) => {
+            return <Route key={path} path={path} element={element} />
+          })}
+        </Routes>
+      </main>
     </div>
   );
 }
