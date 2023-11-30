@@ -12,7 +12,6 @@ const CatalogList = () => {
                     <CatalogListItem key={car.id} car={car} />  
                 ))}
             </ul>
-            
         </div>
     )
 }
