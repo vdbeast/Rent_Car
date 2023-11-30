@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars } from "./api";
+import { fetchCars, getElementDyId, updateFavoriteItem } from "./api";
 
 const catalogInitialState = {
     items: [],
@@ -29,6 +29,32 @@ const carSlice = createSlice({
                 state.items = action.payload;
             })
             .addCase(fetchCars.rejected, handleRejected)
+            .addCase(getElementDyId.pending, handlePending)
+            .addCase(getElementDyId.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.error = null;
+                state.items = state.items.map(item => {
+                    if (item.id === action.payload.id) {
+                        return action.payload;
+                    }
+                    return item;
+                })
+            })
+            .addCase(updateFavoriteItem.pending, handlePending)
+            .addCase(updateFavoriteItem.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.error = null;
+                state.items = state.items.map(item => {
+                    if (item.id === action.payload.id) {
+                        return {
+                            ...item,
+                            isFavorite: action.payload.isFavorite 
+                        };
+                    }
+                    return item;
+                });
+            })
+            .addCase(updateFavoriteItem.rejected, handleRejected)
     }
 })
 

@@ -15,3 +15,27 @@ export const fetchCars = createAsyncThunk(
         }
     }
 )
+
+export const getElementDyId = createAsyncThunk(
+    "cars/getElementDyId",
+    async (id, thunkApi) => {
+        try {
+            const response = await axios.get(`/catalog/${id}`)
+            return response.data
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.message)
+        }
+    }
+)
+
+export const updateFavoriteItem = createAsyncThunk(
+    "cars/updateFavoriteItem",
+    async ({ id, isFavorite }, thunkApi) => {
+        try {
+            const response = await axios.put(`/catalog/${id}`, { isFavorite })
+            return response.data
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.message)
+        }
+    }
+)
