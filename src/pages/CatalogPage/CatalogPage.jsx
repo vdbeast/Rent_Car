@@ -12,7 +12,6 @@ const CatalogPage = () => {
 
     return (
         <div>
-            <p>Catalog Page</p>
             <CatalogList/>
         </div>
     )

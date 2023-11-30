@@ -28,7 +28,7 @@ const CatalogListItem = ({ car }) => {
                 <button className={styles.learn_btn} onClick={handleOpenModal}>Learn More</button>
             </div>
             {isShowModal && (
-                <CatalogModalCard car={car} />    
+                <CatalogModalCard car={car} onCloseModal={handleOpenModal} />    
             )}
         </li>
     )
