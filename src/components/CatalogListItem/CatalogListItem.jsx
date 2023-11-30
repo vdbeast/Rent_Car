@@ -19,16 +19,16 @@ const CatalogListItem = ({ car }) => {
                             <h3 className={styles.title}>{car.make}&nbsp;{car.model},&nbsp;{car.year}</h3>
                             <p className={styles.price_desc}>{car.rentalPrice}</p>
                         </div>
-                        <p className={styles.car_desc}>{car.address} | {car.rentalCompany}</p>
-                        <p className={styles.car_desc}>{car.type} | {car.model} | {car.id}</p>
+                        <div className={styles.desc_wrapper}>
+                            <p className={styles.car_desc}>{car.address} | {car.rentalCompany}</p>
+                            <p className={styles.car_desc}>{car.type} | {car.model} | {car.id}</p>
+                        </div>
                     </div>
                 </div>
                 <button className={styles.learn_btn} onClick={handleOpenModal}>Learn More</button>
             </div>
             {isShowModal && (
-                <div>
-                    <CatalogModalCard car={car}/>
-                </div>
+                <CatalogModalCard car={car} />    
             )}
         </li>
     )
