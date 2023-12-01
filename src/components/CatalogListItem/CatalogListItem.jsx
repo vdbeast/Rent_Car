@@ -13,7 +13,9 @@ const CatalogListItem = ({ car }) => {
         <li className={styles.item}>
             <div className={styles.container}>
                 <div className={styles.main_wrapper}>
-                    <img src={car.img} alt="car photo" className={styles.img} />
+                    <div className={styles.img_wrapper}>
+                        <img src={car.img} alt="car" className={styles.img} />
+                    </div>
                     <div>
                         <div className={styles.title_wrapper}>
                             <h3 className={styles.title}>{car.make}&nbsp;{car.model},&nbsp;{car.year}</h3>
