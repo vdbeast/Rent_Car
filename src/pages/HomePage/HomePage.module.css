@@ -1,5 +1,4 @@
 .container {
-    background-color: rgb(240, 99, 18);
     height: 100vh;
     margin: 0;
     background-image: url("../../images/main_poster.webp");
@@ -27,5 +26,10 @@
     font-weight: 600;
     line-height: 20px;
     letter-spacing: 0em;
+    color: #fff;
+}
+
+.link {
+    text-decoration: none;
     color: #fff;
 }

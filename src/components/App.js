@@ -1,10 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { appRoutes } from "../constants/routes";
+import Navigation from "./Navigation/Navigation";
 
 const App = () => {
   return (
     <div>
-      <header>/</header>
+      <header>
+        <Navigation />
+      </header>
       <main>
         <Routes>
           {appRoutes.map(({ path, element }) => {

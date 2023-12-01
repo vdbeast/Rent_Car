@@ -7,7 +7,7 @@ const HomePage = () => {
         <div className={styles.container}>
             <nav className={styles.nav_container}>
                 <button className={styles.button}>
-                    <NavLink to={ CATALOG_ROUTE }>Start Search</NavLink>
+                    <NavLink to={ CATALOG_ROUTE } className={styles.link}>Start Search</NavLink>
                 </button>
             </nav>
         </div>
