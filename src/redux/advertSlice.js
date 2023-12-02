@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchCars, getElementDyId, updateFavoriteItem } from "./api";
 
 const catalogInitialState = {
-  items: [],
+  cars: [],
   isLoading: false,
   error: null,
 };
@@ -26,15 +26,15 @@ const carSlice = createSlice({
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
+        state.cars = action.payload;
       })
       .addCase(fetchCars.rejected, handleRejected)
       .addCase(getElementDyId.pending, handlePending)
       .addCase(getElementDyId.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = state.items.map((item) =>
-          item.id === action.payload.id ? action.payload : item,
+        state.cars = state.cars.map((car) =>
+          car.id === action.payload.id ? action.payload : car,
         );
       })
       .addCase(updateFavoriteItem.pending, handlePending)
@@ -44,7 +44,7 @@ const carSlice = createSlice({
         const responseData = action.payload;
         if (responseData && responseData.id) {
           const carId = responseData.id;
-          const carToUpdate = state.items.find((item) => item.id === carId);
+          const carToUpdate = state.cars.find((car) => car.id === carId);
           if (carToUpdate) {
             carToUpdate.isFavorite = true;
           }

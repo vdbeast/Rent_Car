@@ -1,5 +1,7 @@
 import { Autocomplete, TextField } from "@mui/material";
 import styles from "./Filter.module.css";
+import { useDispatch } from "react-redux";
+import { setFilter } from "../../redux/filterSlice";
 
 const Filter = () => {
   const optionsCar = [
@@ -21,40 +23,48 @@ const Filter = () => {
     "Audi",
     "BMW",
     "Chevrolet",
-    "Mercedes-Benz",
     "Chrysler",
     "Kia",
     "Land",
     ];
     
     const optionsPrice = [
-        10,
-        20,
-        30,
-        40,
-        50,
-        60,
-        70,
-        80,
-        90,
-        100,
-        110,
-        120,
-        130,
-        140,
-        150,
-        160,
-        170,
-        180,
-        190,
-        200
+        "10",
+        "20",
+        "30",
+        "40",
+        "50",
+        "60",
+        "70",
+        "80",
+        "90",
+        "100",
+        "110",
+        "120",
+        "130",
+        "140",
+        "150",
+        "160",
+        "170",
+        "180",
+        "190",
+        "200"
     ];
 
+  const dispatch = useDispatch();
+
+  const handleSearch = (e) => {
+    e.preventDefault(); 
+    const carBrand = document.getElementById("model").value;
+    // const price = document.getElementById("price").value;
+
+    dispatch(setFilter(carBrand));
+  };
+  
   return (
     <div className={styles.container}>
-      <form action="" className={styles.form}>
+      <form action="" className={styles.form} onSubmit={handleSearch}>
         <Autocomplete
-          disablePortal
           id="model"
           options={optionsCar}
           sx={{ width: 300 }}

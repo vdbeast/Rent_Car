@@ -1,18 +1,21 @@
 import { useSelector } from "react-redux";
 import CatalogListItem from "../CatalogListItem/CatalogListItem";
-import { selectCatalog } from "../../redux/selectors";
+import { selectCatalog, selectFilter } from "../../redux/selectors";
 import styles from "./CatalogList.module.css";
 import { useState } from "react";
 import Filter from "../Filter/Filter";
 
 const CatalogList = () => {
   const cars = useSelector(selectCatalog);
+  const filter = useSelector(selectFilter);
   const limit = 12;
   const [visibleCars, setVisibleCars] = useState(limit);
 
   const handleLoadMore = () => {
     setVisibleCars((prevVisibleCars) => prevVisibleCars + limit);
   };
+
+  const filteredContacts = cars.filter(car => car.make.toLowerCase().includes(filter.toLowerCase()))
 
   return (
     <div className={styles.container}>
@@ -21,7 +24,7 @@ const CatalogList = () => {
       </div>
       <div>
         <ul className={styles.list}>
-          {cars.slice(0, visibleCars).map((car) => (
+          {filteredContacts.slice(0, visibleCars).map((car) => (
             <CatalogListItem key={car.id} car={car} />
           ))}
         </ul>

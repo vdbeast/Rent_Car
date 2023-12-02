@@ -1,5 +1,6 @@
-export const selectCatalog = (state) => state.items;
+export const selectCatalog = (state) => state.cars.cars;
 export const selectCatalogFavorite = (state) =>
-  state.items.filter((item) => item.isFavorite);
-export const selectIsLoading = (state) => state.isLoading;
-export const selectError = (state) => state.error;
+  state.cars.cars.filter((car) => car.isFavorite);
+export const selectIsLoading = (state) => state.cars.isLoading;
+export const selectError = (state) => state.cars.error;
+export const selectFilter = (state) => state.filter.filter;
