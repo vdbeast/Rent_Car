@@ -1,20 +1,21 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import { persistStore, persistReducer } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import carsReducer from "./advertSlice";
 
-// const persistConfig = {
-//     key: 'key',
-//     storage,
-//     whitelist: ['favorites'],
-// };
+const persistConfig = {
+    key: 'root',
+    storage
+};
 
-// console.log('storage', storage)
-
-// const persistedCarsReducer = persistReducer(persistConfig, carsReducer);
+const persistedCarsReducer = persistReducer(persistConfig, carsReducer);
 
 export const store = configureStore ({
-    reducer: carsReducer
+    reducer: persistedCarsReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false
+        })
 })
 
-// export const persistedStore = persistStore(store)
+export const persistedStore = persistStore(store)

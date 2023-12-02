@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { appRoutes } from "../constants/routes";
 import Navigation from "./Navigation/Navigation";
+import { Suspense } from "react";
 
 const App = () => {
   return (
@@ -9,11 +10,13 @@ const App = () => {
         <Navigation />
       </header>
       <main>
-        <Routes>
-          {appRoutes.map(({ path, element }) => {
-            return <Route key={path} path={path} element={element} />
-          })}
-        </Routes>
+        <Suspense>
+          <Routes>
+            {appRoutes.map(({ path, element }) => {
+              return <Route key={path} path={path} element={element} />
+            })}
+          </Routes>
+        </Suspense>
       </main>
     </div>
   );

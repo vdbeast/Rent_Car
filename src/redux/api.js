@@ -32,6 +32,7 @@ export const updateFavoriteItem = createAsyncThunk(
     async ({ id, isFavorite }, thunkApi) => {
         try {
             const response = await axios.put(`/catalog/${id}`, { isFavorite })
+            console.log('response.data', response)
             return response.data
         } catch (error) {
             return thunkApi.rejectWithValue(error.message)

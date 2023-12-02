@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import styles from "./CatalogListItem.module.css"
 import CatalogModalCard from "../CatalogModalCard/CatalogModalCard";
+import { useDispatch } from "react-redux";
+import { updateFavoriteItem } from "../../redux/api";
 
 const CatalogListItem = ({ car }) => {
     const [isShowModal, setIsShowModal] = useState(false);
+    const dispatch = useDispatch();
 
     const handleOpenModal = () => {
         setIsShowModal((prev)=>!prev)
+    }
+
+    const handleAddToFavorite = () => {
+        dispatch(updateFavoriteItem(car.id))
     }
     
     return (
@@ -15,6 +22,9 @@ const CatalogListItem = ({ car }) => {
                 <div className={styles.main_wrapper}>
                     <div className={styles.img_wrapper}>
                         <img src={car.img} alt="car" className={styles.img} />
+                        <button onClick={handleAddToFavorite}>
+                            x
+                        </button>
                     </div>
                     <div>
                         <div className={styles.title_wrapper}>

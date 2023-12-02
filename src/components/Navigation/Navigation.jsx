@@ -1,12 +1,14 @@
 import { NavLink } from 'react-router-dom'
-import { CATALOG_ROUTE, FAVORITE_ROUTE } from '../../constants/routes'
+import { CATALOG_ROUTE, FAVORITE_ROUTE, HOME_ROUTE } from '../../constants/routes'
 import logo from '../../images/logo.png'
 import styles from './Navigation.module.css'
 
 const Navigation = () => {
     return (
         <div className={styles.container}>
-            <img src={logo} alt="logo" />
+            <NavLink to={HOME_ROUTE}>
+                <img src={logo} alt="logo" />
+            </NavLink>
             <ul className={styles.list}>
                 <li>
                     <button className={styles.btn}>

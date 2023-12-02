@@ -33,27 +33,25 @@ const carSlice = createSlice({
             .addCase(getElementDyId.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
-                state.items = state.items.map(item => {
-                    if (item.id === action.payload.id) {
-                        return action.payload;
-                    }
-                    return item;
-                })
+                state.items = state.items.map((item) =>
+                    item.id === action.payload.id ? action.payload : item
+                );
             })
             .addCase(updateFavoriteItem.pending, handlePending)
             .addCase(updateFavoriteItem.fulfilled, (state, action) => {
-                state.isLoading = false;
-                state.error = null;
-                state.items = state.items.map(item => {
-                    if (item.id === action.payload.id) {
-                        return {
-                            ...item,
-                            isFavorite: action.payload.isFavorite 
-                        };
-                    }
-                    return item;
-                });
-            })
+        state.isLoading = false;
+        state.error = null;
+        const responseData = action.payload;
+        if (responseData && responseData.id) {
+          const carId = responseData.id;
+          const carToUpdate = state.items.find((item) => item.id === carId);
+          if (carToUpdate) {
+            carToUpdate.isFavorite = true;
+          }
+        } else {
+          console.error('No valid id found in response:', responseData);
+        }
+      })
             .addCase(updateFavoriteItem.rejected, handleRejected)
     }
 })
