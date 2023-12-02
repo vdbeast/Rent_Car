@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.form {
+  display: flex;
+  gap: 18px;
+}
+
+.btn {
+  border-radius: 12px;
+  border: none;
+  background-color: rgba(52, 112, 255, 1);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 44px;
+  padding-right: 44px;
+  color: white;
+}

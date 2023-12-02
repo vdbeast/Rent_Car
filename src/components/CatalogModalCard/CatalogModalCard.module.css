@@ -1,120 +1,119 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 541px;
-    height: 752px;
-    background-color: #fff;
-    border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 541px;
+  height: 752px;
+  background-color: #fff;
+  border-radius: 24px;
 }
 
 .container {
-    margin: 40px;
+  margin: 40px;
 }
 
 .close_btn {
-    position: absolute;
-    margin-top: -20px;
-    margin-left: 460px;
-    width: 12px;
-    height: 12px;
-    border: none;
-    background-color: #fff;
-    font-size: 18px;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: 460px;
+  width: 12px;
+  height: 12px;
+  border: none;
+  background-color: #fff;
+  font-size: 18px;
 }
 
 .img_wrapper {
-    width: 461px;
-    height: 248px;
+  width: 461px;
+  height: 248px;
 }
 
 .img {
-    width: 461px;
-    height: 248px;
-    border-radius: 14px;
+  width: 461px;
+  height: 248px;
+  border-radius: 14px;
 }
 
 .text_container {
-    height: 370px;
+  height: 370px;
 }
 
 .title {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .car_desc {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: rgba(18, 20, 23, 0.5);
-    margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(18, 20, 23, 0.5);
+  margin: 0;
 }
 
-.main_car_description{
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: left;
+.main_car_description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .subtitle {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .car_desc_list {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
 }
 
 .car_desc_item {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: rgba(18, 20, 23, 0.5);
-    padding-right: 6px;
-    margin-right: 6px;
-    border-right: 1px solid rgba(18, 20, 23, 0.1);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(18, 20, 23, 0.5);
+  padding-right: 6px;
+  margin-right: 6px;
+  border-right: 1px solid rgba(18, 20, 23, 0.1);
 }
 
 .car_desc_item:last-child {
-    border-right: none;
+  border-right: none;
 }
 
-
 .rent_btn {
-    width: 168px;
-    height: 44px;
-    border-radius: 12px;
-    background-color: rgba(52, 112, 255, 1);
-    color: #fff;
-    border: none;
-    padding: 12px, 50px;
+  width: 168px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: rgba(52, 112, 255, 1);
+  color: #fff;
+  border: none;
+  padding: 12px, 50px;
 }

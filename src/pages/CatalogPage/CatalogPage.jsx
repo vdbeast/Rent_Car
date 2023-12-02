@@ -4,17 +4,17 @@ import { fetchCars } from "../../redux/api";
 import CatalogList from "../../components/CatalogList/CatalogList";
 
 const CatalogPage = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchCars())
-    }, [dispatch])
+  useEffect(() => {
+    dispatch(fetchCars());
+  }, [dispatch]);
 
-    return (
-        <div>
-            <CatalogList/>
-        </div>
-    )
-}
+  return (
+    <div>
+      <CatalogList />
+    </div>
+  );
+};
 
 export default CatalogPage;

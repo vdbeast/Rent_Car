@@ -1,73 +1,73 @@
 .item {
-    list-style: none;
+  list-style: none;
 }
 
 .container {
-    width: 274px;
-    min-height: 426px;
-    /* overflow: hidden; */
-    margin: 0;
-    margin-bottom: 22px;
+  width: 274px;
+  min-height: 426px;
+  /* overflow: hidden; */
+  margin: 0;
+  margin-bottom: 22px;
 }
 
 .img_wrapper {
-    width: 100%;
-    height: 268px;
-    display: flex;
+  width: 100%;
+  height: 268px;
+  display: flex;
 }
 
 .img {
-    width: 100%;
-    height: 268px;
-    border-radius: 14px;
-    margin-bottom: 14px;
+  width: 100%;
+  height: 268px;
+  border-radius: 14px;
+  margin-bottom: 14px;
 }
 
 .title_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin: 0;
-    margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 8px;
 }
 
 .price_desc {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0em;
-    margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  margin: 0;
 }
 
 .car_desc {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: rgba(18, 20, 23, 0.5);
-    margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(18, 20, 23, 0.5);
+  margin: 0;
 }
 
 .desc_wrapper {
-    margin-bottom: 28px;
-    gap: 8px;
+  margin-bottom: 28px;
+  gap: 8px;
 }
 
 .learn_btn {
-    width: 100%;
-    height: 44px;
-    background-color:rgba(52, 112, 255, 1);
-    padding: 12px,99px,12px,99px;
-    border: none;
-    border-radius: 12px;
-    color: #fff;
+  width: 100%;
+  height: 44px;
+  background-color: rgba(52, 112, 255, 1);
+  padding: 12px, 99px, 12px, 99px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
 }
