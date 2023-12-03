@@ -10,19 +10,19 @@ const CatalogListItem = ({ car }) => {
   };
 
   const handleAddToFavorite = () => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const isFavorite = favorites.some((favorite) => favorite.id === car.id);
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  const isFavorite = favorites.some((favorite) => favorite.id === car.id);
 
-    if (isFavorite) {
-      const updatedFavorites = favorites.filter(
-        (favorite) => favorite.id !== car.id,
-      );
-      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    } else {
-      const updatedFavorites = [...favorites, { id: car.id }];
-      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    }
-  };
+  if (isFavorite) {
+    const updatedFavorites = favorites.filter(
+      (favorite) => favorite.id !== car.id
+    );
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  } else {
+    const updatedFavorites = [...favorites, car];
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  }
+};
 
   return (
     <li className={styles.item}>
