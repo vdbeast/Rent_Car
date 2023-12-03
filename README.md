@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Назва проєкту - Rent_car
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Це веб-додаток для пошуку автомобілів з можливістю додавання до списку обраних.Користувач може шукати автомобілі за різними критеріями, додавати їх до списку обраних та переглядати докладні дані про кожен автомобіль. Для розробки використовувалась мова програмування Javascript. Фреймоворк, що використовувався - Redux. База даних створена за допомогою Mokapi.io.
 
-## Available Scripts
+## Запуск проєкту
 
-In the project directory, you can run:
+Ось кілька кроків для запуску проєкту на вашому пристрої:
 
-### `npm start`
+1. Клонуйте репозиторій: `git clone https://github.com/vdbeast/Rent_car.git`
+2. Встановіть залежності: `npm install`
+3. Запустіть сервер: `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Структура проєкту
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+База даних створена в Mockapi з наступними полями: id, year, make, model, type, img, description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice, rentalCompany, address, rentalConditions, mileage.
+Щодо фронтенд-частини. Файли в папці src/ створені для вихідного коду, public/ - для статичних ресурсів.
 
-### `npm test`
+## Активні сервіси та API:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Axios: Використовується для здійснення HTTP-запитів до сервера та обміну даними з віддаленим API. За його допомогою отримуємо та надсилаємо дані для оновлення, створення або видалення об'єктів у відповідній базі даних.
 
-### `npm run build`
+## Взаємодія та Запити:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Отримання Каталогу: Використовується Axios для запиту каталогу автомобілів з віддаленого сервера за допомогою методу GET. Отримані дані обробляються та відображаються на сторінці каталогу.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Взаємодія з зображеннями: Зображення автомобілів зберігаються в хмарному сховищі, а їх посилання додаються до відповідних об'єктів в базі даних для використання на сайті.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Інформація, яку ми отримуємо від зовнішніх сервісів, містить дані про автомобілі, включаючи зображення, модель, рік випуску, адресу та іншу характеристику.
 
-### `npm run eject`
+## Обмеження та Важливі Параметри:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Оскільки дані про автомобілі оновлюються регулярно, зображення та інші дані можуть бути піддані змінам з часом. Рекомендується періодично оновлювати дані, щоб мати актуальну інформацію.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Команди для розробки
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Ось кілька команд, які можна використати для розробки:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `npm start` - запуск сервера розробки
+- `npm test` - запуск тестів
 
-## Learn More
+## Контактна інформація
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Якщо у вас є питання або пропозиції, зв'яжіться з нами:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email: vladimirdrobotun1994@gmail.com
+- GitHub: [vdbeast](https://github.com/vdbeast)

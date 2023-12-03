@@ -48,7 +48,9 @@
 }
 
 .text_container {
-  height: 370px;
+  max-height: 370px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
 }
 
 .title {
