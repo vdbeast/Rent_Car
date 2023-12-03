@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.nav_container}>
-        <nav >
+        <nav>
           <Button variant="contained" className={styles.button}>
             <NavLink to={CATALOG_ROUTE} className={styles.link}>
               Start Search
@@ -17,7 +17,7 @@ const HomePage = () => {
         </nav>
       </div>
       <div>
-        <About/>
+        <About />
       </div>
     </div>
   );

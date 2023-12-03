@@ -27,7 +27,7 @@ const Navigation = () => {
             <NavLink to={FAVORITE_ROUTE} className={styles.link}>
               Favorite
             </NavLink>
-          </Button>    
+          </Button>
         </li>
       </ul>
     </div>
