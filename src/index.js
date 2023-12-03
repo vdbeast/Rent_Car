@@ -19,4 +19,3 @@ root.render(
     </Provider>
   </React.StrictMode>,
 );
-// basename="/Rent_Car"

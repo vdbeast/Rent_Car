@@ -1,4 +1,4 @@
-## Project Name - Rent_Car
+## Project Name - Rent_car
 
 This is a web application for searching cars with the ability to add them to the favorites list. Users can search for cars using various criteria, add them to their favorites list, and view detailed information about each car. JavaScript was used for development. The framework used was Redux. The database was created using Mockapi.io.
 
