@@ -16,14 +16,14 @@ const Navigation = () => {
       </NavLink>
       <ul className={styles.list}>
         <li>
-          <Button variant="outlined" className={styles.btn}>
+          <Button variant="text" className={styles.btn}>
             <NavLink to={CATALOG_ROUTE} className={styles.link}>
               Search
             </NavLink>
           </Button>
         </li>
         <li>
-          <Button variant="outlined" className={styles.btn}>
+          <Button variant="text" className={styles.btn}>
             <NavLink to={FAVORITE_ROUTE} className={styles.link}>
               Favorite
             </NavLink>
