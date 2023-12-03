@@ -1,38 +1,37 @@
 .container {
   height: 100vh;
   margin: 0;
+  width: 100%;
+}
+
+.nav_container {
+  height: 600px;
   background-image: url("../../images/main_poster.webp");
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.nav_container {
-  display: flex;
-  position: relative;
-  top: 150px;
 }
 
 .button {
   background-color: rgba(52, 112, 255, 1);
-  width: 274px;
-  height: 44px;
+  width: 400px;
+  height: 70px;
   padding: 12px, 99px, 12px, 99px;
   border-radius: 12px;
   border: none;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 20px;
   letter-spacing: 0em;
   color: #fff;
+  margin-top: 200px;
 }
 
 .button:hover,
 .button:focus {
-  background-color: #cbd4e2;
+  background-color: inherit;
 }
 
 .link {
