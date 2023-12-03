@@ -1,46 +1,43 @@
-# Назва проєкту - Rent_car
+## Project Name - Rent_car
 
-Це веб-додаток для пошуку автомобілів з можливістю додавання до списку обраних.Користувач може шукати автомобілі за різними критеріями, додавати їх до списку обраних та переглядати докладні дані про кожен автомобіль. Для розробки використовувалась мова програмування Javascript. Фреймоворк, що використовувався - Redux. База даних створена за допомогою Mokapi.io.
+This is a web application for searching cars with the ability to add them to the favorites list. Users can search for cars using various criteria, add them to their favorites list, and view detailed information about each car. JavaScript was used for development. The framework used was Redux. The database was created using Mockapi.io.
 
-## Запуск проєкту
+## Project Launch
 
-Ось кілька кроків для запуску проєкту на вашому пристрої:
+Here are a few steps to run the project on your device:
 
-1. Клонуйте репозиторій: `git clone https://github.com/vdbeast/Rent_car.git`
-2. Встановіть залежності: `npm install`
-3. Запустіть сервер: `npm start`
+Clone the repository: `git clone https://github.com/vdbeast/Rent_car.git`
+Install dependencies: `npm install`
+Start the server: `npm start`
 
-## Структура проєкту
+## Project Structure
 
-База даних створена в Mockapi з наступними полями: id, year, make, model, type, img, description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice, rentalCompany, address, rentalConditions, mileage.
-Щодо фронтенд-частини. Файли в папці src/ створені для вихідного коду, public/ - для статичних ресурсів.
+The database is created in Mockapi with the following fields: id, year, make, model, type, img, description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice, rentalCompany, address, rentalConditions, mileage. Regarding the frontend part. Files in the src/ folder are created for source code, public/ - for static resources.
 
-## Активні сервіси та API:
+## Active Services and API:
 
-Axios: Використовується для здійснення HTTP-запитів до сервера та обміну даними з віддаленим API. За його допомогою отримуємо та надсилаємо дані для оновлення, створення або видалення об'єктів у відповідній базі даних.
+Axios: Used for making HTTP requests to the server and exchanging data with a remote API. It is used to retrieve and send data to update, create, or delete objects in the respective database.
 
-## Взаємодія та Запити:
+## Interactions and Requests:
 
-Отримання Каталогу: Використовується Axios для запиту каталогу автомобілів з віддаленого сервера за допомогою методу GET. Отримані дані обробляються та відображаються на сторінці каталогу.
+Catalog Retrieval: Axios is used to request a catalog of cars from the remote server using the GET method. The received data is processed and displayed on the catalog page.
 
-Взаємодія з зображеннями: Зображення автомобілів зберігаються в хмарному сховищі, а їх посилання додаються до відповідних об'єктів в базі даних для використання на сайті.
+Interaction with Images: Car images are stored in cloud storage, and their links are added to the respective objects in the database for use on the website.
 
-Інформація, яку ми отримуємо від зовнішніх сервісів, містить дані про автомобілі, включаючи зображення, модель, рік випуску, адресу та іншу характеристику.
+The information received from external services contains car data, including images, model, year, address, and other characteristics.
 
-## Обмеження та Важливі Параметри:
+## Limitations and Key Parameters:
 
-Оскільки дані про автомобілі оновлюються регулярно, зображення та інші дані можуть бути піддані змінам з часом. Рекомендується періодично оновлювати дані, щоб мати актуальну інформацію.
+As car data is regularly updated, images and other data may change over time. It is recommended to periodically update the data to have current information.
 
-## Команди для розробки
+## Development Commands
 
-Ось кілька команд, які можна використати для розробки:
+Here are a few commands that can be used for development:
 
-- `npm start` - запуск сервера розробки
-- `npm test` - запуск тестів
-
-## Контактна інформація
-
-Якщо у вас є питання або пропозиції, зв'яжіться з нами:
+- `npm start` - start the development server
+- `npm test` - run tests
+  Contact Information
+  If you have any questions or suggestions, please contact us:
 
 - Email: vladimirdrobotun1994@gmail.com
 - GitHub: [vdbeast](https://github.com/vdbeast)
