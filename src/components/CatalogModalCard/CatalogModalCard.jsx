@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import styles from "./CatalogModalCard.module.css";
 import RentalConditions from "../RentalConditions/RentalConditions";
+import { Button } from "@mui/material";
 
 const CatalogModalCard = ({ car, onCloseModal }) => {
   useEffect(() => {
@@ -80,12 +81,12 @@ const CatalogModalCard = ({ car, onCloseModal }) => {
               <RentalConditions car={car} />
             </div>
           </div>
-          <button
+          <Button
             className={styles.rent_btn}
             onClick={() => (window.location.href = "tel:+380730000000")}
           >
             Rental Car
-          </button>
+          </Button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { Autocomplete, TextField } from "@mui/material";
+import { Autocomplete, Button, TextField } from "@mui/material";
 import styles from "./Filter.module.css";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../redux/filterSlice";
@@ -88,7 +88,7 @@ const Filter = () => {
             />
           )}
         />
-        <button className={styles.btn}>Search</button>
+        <Button className={styles.btn}>Search</Button>
       </form>
     </div>
   );

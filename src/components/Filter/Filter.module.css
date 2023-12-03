@@ -21,3 +21,9 @@
   padding-right: 44px;
   color: white;
 }
+
+.btn:hover, 
+.btn:focus {
+  color: black;
+  background-color: #cbd4e2;
+}

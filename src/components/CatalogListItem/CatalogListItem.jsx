@@ -1,28 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CatalogListItem.module.css";
 import CatalogModalCard from "../CatalogModalCard/CatalogModalCard";
+import { Button, IconButton } from "@mui/material";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const CatalogListItem = ({ car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleOpenModal = () => {
     setIsShowModal((prev) => !prev);
   };
 
-  const handleAddToFavorite = () => {
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  const isFavorite = favorites.some((favorite) => favorite.id === car.id);
+    useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const isCarFavorite = favorites.some((favorite) => favorite.id === car.id);
+    setIsFavorite(isCarFavorite);
+  }, [car.id]);
 
-  if (isFavorite) {
-    const updatedFavorites = favorites.filter(
-      (favorite) => favorite.id !== car.id
-    );
+  const handleToggleFavorite = () => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const updatedFavorites = isFavorite
+      ? favorites.filter((favorite) => favorite.id !== car.id)
+      : [...favorites, car];
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-  } else {
-    const updatedFavorites = [...favorites, car];
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-  }
-};
+    setIsFavorite(!isFavorite);
+  };
 
   return (
     <li className={styles.item}>
@@ -30,7 +34,9 @@ const CatalogListItem = ({ car }) => {
         <div className={styles.main_wrapper}>
           <div className={styles.img_wrapper}>
             <img src={car.img} alt="car" className={styles.img} />
-            <button onClick={handleAddToFavorite}>x</button>
+            <IconButton onClick={handleToggleFavorite} className={styles.favorite_btn}>
+              {isFavorite ? <FavoriteIcon className={styles.favorite_icon} /> : <FavoriteBorderIcon className={styles.favorite_non_icon} />}
+            </IconButton>
           </div>
           <div>
             <div className={styles.title_wrapper}>
@@ -49,9 +55,9 @@ const CatalogListItem = ({ car }) => {
             </div>
           </div>
         </div>
-        <button className={styles.learn_btn} onClick={handleOpenModal}>
+        <Button className={styles.learn_btn} onClick={handleOpenModal}>
           Learn More
-        </button>
+        </Button>
       </div>
       {isShowModal && (
         <CatalogModalCard car={car} onCloseModal={handleOpenModal} />

@@ -11,8 +11,9 @@
 }
 
 .nav_container {
-  position: absolute;
-  bottom: 100px;
+  display: flex;
+  position: relative;
+  top: 150px;
 }
 
 .button {
@@ -27,6 +28,11 @@
   line-height: 20px;
   letter-spacing: 0em;
   color: #fff;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #cbd4e2;
 }
 
 .link {

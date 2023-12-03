@@ -23,6 +23,20 @@
   margin-bottom: 14px;
 }
 
+.favorite_btn {
+  position: relative;
+  right: 40px;
+  bottom: 100px;
+}
+
+.favorite_icon {
+  fill: rgba(52, 112, 255, 1);
+}
+
+.favorite_non_icon {
+  fill: rgba(255, 255, 255, 0.8);
+}
+
 .title_wrapper {
   display: flex;
   justify-content: space-between;
@@ -70,4 +84,11 @@
   border: none;
   border-radius: 12px;
   color: #fff;
+  z-index: 1;
+}
+
+.learn_btn:hover,
+.learn_btn:focus {
+  color: black;
+  background-color: #cbd4e2;
 }

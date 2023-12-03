@@ -4,6 +4,7 @@ import { selectCatalog, selectFilter } from "../../redux/selectors";
 import styles from "./CatalogList.module.css";
 import { useState } from "react";
 import Filter from "../Filter/Filter";
+import { Button } from "@mui/material";
 
 const CatalogList = () => {
   const cars = useSelector(selectCatalog);
@@ -31,9 +32,9 @@ const CatalogList = () => {
           ))}
         </ul>
         {visibleCars < cars.length && (
-          <button className={styles.load_more_btn} onClick={handleLoadMore}>
+          <Button className={styles.load_more_btn} onClick={handleLoadMore}>
             Load More
-          </button>
+          </Button>
         )}
       </div>
     </div>

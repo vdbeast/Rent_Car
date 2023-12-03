@@ -6,6 +6,7 @@ import {
 } from "../../constants/routes";
 import logo from "../../images/logo.png";
 import styles from "./Navigation.module.css";
+import { Button } from "@mui/material";
 
 const Navigation = () => {
   return (
@@ -15,18 +16,18 @@ const Navigation = () => {
       </NavLink>
       <ul className={styles.list}>
         <li>
-          <button className={styles.btn}>
+          <Button variant="outlined" className={styles.btn}>
             <NavLink to={CATALOG_ROUTE} className={styles.link}>
               Search
             </NavLink>
-          </button>
+          </Button>
         </li>
         <li>
-          <button className={styles.btn}>
+          <Button variant="outlined" className={styles.btn}>
             <NavLink to={FAVORITE_ROUTE} className={styles.link}>
               Favorite
             </NavLink>
-          </button>
+          </Button>    
         </li>
       </ul>
     </div>
