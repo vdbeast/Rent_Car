@@ -12,10 +12,11 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistedStore}>
-        <BrowserRouter basename="/Rent_Car">
+        <BrowserRouter >
           <App />
         </BrowserRouter>
       </PersistGate>
     </Provider>
   </React.StrictMode>,
 );
+// basename="/Rent_Car"
