@@ -6,7 +6,7 @@ This is a web application for searching cars with the ability to add them to the
 
 Here are a few steps to run the project on your device:
 
-- Clone the repository: `git clone https://github.com/vdbeast/Rent_car.git`
+- Clone the repository: `git clone https://github.com/vdbeast/Rent_Car.git`
 - Install dependencies: `npm install`
 - Start the server: `npm start`
 
