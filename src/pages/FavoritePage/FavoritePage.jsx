@@ -1,15 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
-import { updateFavoriteItem } from "../../redux/api";
-import { useEffect } from "react";
-import { selectCatalogFavorite } from "../../redux/selectors";
+import { useDispatch } from "react-redux";
+import { fetchCars } from "../../redux/api";
+import { useEffect, useState } from "react";
 import Filter from "../../components/Filter/Filter";
+import CatalogListItem from "../../components/CatalogListItem/CatalogListItem";
 
 const FavoritePage = () => {
-  const favoriteCar = useSelector(selectCatalogFavorite);
+  const [favoriteCars, setFavoriteCars] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(updateFavoriteItem());
+    dispatch(fetchCars());
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setFavoriteCars(favorites);
   }, [dispatch]);
 
   return (
@@ -19,8 +21,8 @@ const FavoritePage = () => {
       </div>
       <div>
         <ul>
-          {favoriteCar.map((car) => (
-            <li key={car.id}>{car.id}</li>
+          {favoriteCars.map((car) => (
+            <CatalogListItem key={car.id} car={car} />
           ))}
         </ul>
       </div>

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars, getElementDyId, updateFavoriteItem } from "./api";
+import { deleteCar, fetchCars, getElementDyId } from "./api";
 
 const catalogInitialState = {
   cars: [],
@@ -37,22 +37,13 @@ const carSlice = createSlice({
           car.id === action.payload.id ? action.payload : car,
         );
       })
-      .addCase(updateFavoriteItem.pending, handlePending)
-      .addCase(updateFavoriteItem.fulfilled, (state, action) => {
+      .addCase(deleteCar.pending, handlePending)
+      .addCase(deleteCar.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        const responseData = action.payload;
-        if (responseData && responseData.id) {
-          const carId = responseData.id;
-          const carToUpdate = state.cars.find((car) => car.id === carId);
-          if (carToUpdate) {
-            carToUpdate.isFavorite = true;
-          }
-        } else {
-          console.error("No valid id found in response:", responseData);
-        }
+        state.cars = state.cars.filter((car) => car.id !== action.payload);
       })
-      .addCase(updateFavoriteItem.rejected, handleRejected);
+      .addCase(deleteCar.rejected, handleRejected);
   },
 });
 

@@ -27,12 +27,11 @@ export const getElementDyId = createAsyncThunk(
   },
 );
 
-export const updateFavoriteItem = createAsyncThunk(
-  "cars/updateFavoriteItem",
-  async ({ id, isFavorite }, thunkApi) => {
+export const deleteCar = createAsyncThunk(
+  "cars/deleteCar",
+  async (id, thunkApi) => {
     try {
-      const response = await axios.put(`/catalog/${id}`, { isFavorite });
-      console.log("response.data", response);
+      const response = await axios.delete(`/catalog/${id}`);
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

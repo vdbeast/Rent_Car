@@ -15,7 +15,9 @@ const CatalogList = () => {
     setVisibleCars((prevVisibleCars) => prevVisibleCars + limit);
   };
 
-  const filteredContacts = cars.filter(car => car.make.toLowerCase().includes(filter.toLowerCase()))
+  const filteredContacts = cars.filter((car) =>
+    car.make.toLowerCase().includes(filter.toLowerCase()),
+  );
 
   return (
     <div className={styles.container}>

@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import styles from "./CatalogListItem.module.css";
 import CatalogModalCard from "../CatalogModalCard/CatalogModalCard";
-import { useDispatch } from "react-redux";
-import { updateFavoriteItem } from "../../redux/api";
 
 const CatalogListItem = ({ car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
-  const dispatch = useDispatch();
 
   const handleOpenModal = () => {
     setIsShowModal((prev) => !prev);
   };
 
   const handleAddToFavorite = () => {
-    dispatch(updateFavoriteItem(car.id));
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const isFavorite = favorites.some((favorite) => favorite.id === car.id);
+
+    if (isFavorite) {
+      const updatedFavorites = favorites.filter(
+        (favorite) => favorite.id !== car.id,
+      );
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    } else {
+      const updatedFavorites = [...favorites, { id: car.id }];
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    }
   };
 
   return (
